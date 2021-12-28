@@ -59,6 +59,12 @@ public class SlideshowFragment extends Fragment {
                 textView.setText(s);
             }
         });
+        binding.listview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         binding.afficheliste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +72,8 @@ public class SlideshowFragment extends Fragment {
                 Toast.makeText(getContext(),test, Toast.LENGTH_SHORT).show();
                 NavHostFragment.findNavController(SlideshowFragment.this).navigate(nav_vente);
             }
+
+
         });
         return root;
     }
