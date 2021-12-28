@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Ciel couvert</string>
+    <string name="nav_header_subtitle">EKS</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Produits</string>
+    <string name="menu_slideshow">Liste produits</string>
+    <string name="menu_vente">to sell</string>
+    <string name="title_activity_client">ClientActivity</string>
+    <string name="title_home">Home</string>
+    <string name="menu_login">Login</string>
+    <string name="menu_commande">Commande</string>
+
+</resources>

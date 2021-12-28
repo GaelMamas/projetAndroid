@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.vente.VenteFragment">
+
+    <TextView
+        android:id="@+id/text_vente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:text="ID" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName1"
+        android:layout_width="334dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="166dp"
+        android:layout_height="wrap_content"
+        android:text="Nom produits"
+        android:padding="8dp"
+        />
+
+    <EditText
+        android:id="@+id/nom"
+        android:layout_width="329dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:text="Prix"
+        android:padding="8dp"
+        />
+
+    <EditText
+        android:id="@+id/prix"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:text="Qté"
+        android:padding="8dp"
+        />
+
+    <EditText
+        android:id="@+id/quantite"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:padding="8dp"
+        />
+
+    <TextView
+        android:id="@+id/somme"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:text="Somme :"
+        android:padding="8dp"
+        />
+
+        />
+    <Button
+        android:id="@+id/calcul"
+        android:layout_width="150dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Button" />
+
+
+
+
+</LinearLayout>
