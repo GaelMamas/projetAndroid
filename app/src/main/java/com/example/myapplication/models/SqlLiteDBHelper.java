@@ -15,6 +15,8 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
     private static final String DATABASE_NAME = "mabase.db";
     private static final String TABLE_POSTS = "produit";
     private static final String TABLE_USERS = "user";
+    private  static final String TABLE_VENTE ="vente";
+    private static  final  String TABLE_COMMANDE = "commande";
     private static final int DATABASE_VERSION = 1;
 
     public SqlLiteDBHelper(Context context)
@@ -29,7 +31,7 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create table produit(id text, nom text, prix float, quantite integer , photo text)");
+        DB.execSQL("create table produit(id text, nom text, prix float, quantite integer)");
         DB.execSQL("create table client(id text, num integer , code integer , role text)");
 
     }
@@ -44,7 +46,6 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         contentValues.put("nom", produit.getNom());
         contentValues.put("prix", produit.getPrix());
         contentValues.put("quantite", produit.getQuantite());
-        contentValues.put("photo", produit.getQuantite());
 
         long resultat = DB.insert("produit", null, contentValues);
         if (resultat == -1) {

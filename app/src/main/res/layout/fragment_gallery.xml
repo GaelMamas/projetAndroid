@@ -47,7 +47,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="8dp"
-        android:hint="saisir le nom"
+
 
         android:text="" />
 

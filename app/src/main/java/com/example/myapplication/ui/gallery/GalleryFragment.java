@@ -43,7 +43,7 @@ public class GalleryFragment extends Fragment {
         EditText champPrix = binding.prix;
         EditText champQuantite = binding.quantite;
         Button boutonInsert= binding.insert;
-        Button boutonUpdate=binding.update;
+        Button boutonUpdate= binding.update;
 
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

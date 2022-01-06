@@ -22,7 +22,7 @@ public class CommandFragment extends Fragment {
     private CommandViewModel commandViewModel;
     private FragmentCommandBinding binding;
     private DBHelper database;
-    private ListView listView1;
+    private ListView listView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         commandViewModel = new ViewModelProvider(this).get(CommandViewModel.class);
@@ -30,7 +30,7 @@ public class CommandFragment extends Fragment {
         binding = FragmentCommandBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         database = new SqlLiteDBHelper(getContext());
-        listView1 = binding.listview1;
+        listView = binding.listCommande;
         final TextView textView = binding.textCommande;
         commandViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
