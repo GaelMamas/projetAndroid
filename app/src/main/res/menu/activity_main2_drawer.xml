@@ -7,11 +7,11 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="Accueil" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="Creation produits" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
@@ -19,12 +19,12 @@
         <item
             android:id="@+id/nav_vente"
             android:icon="@drawable/ic_baseline_add_shopping_cart_24"
-            android:title="@string/menu_vente" />
+            android:title="Vente" />
         <item
             android:id="@+id/nav_login"
-            android:title="@string/menu_login" />
+            android:title="Utilisateur" />
         <item
             android:id="@+id/nav_commande"
-            android:title="@string/menu_commande" />
+            android:title="les ventes" />
     </group>
 </menu>

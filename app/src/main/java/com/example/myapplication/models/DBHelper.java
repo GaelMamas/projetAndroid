@@ -16,4 +16,10 @@ public interface DBHelper {
     Produit getProduit(String id);
 
     List<Produit> findAllProduits();
+
+    List<User> findAllUsers();
+
+    List<Vente> findAllVente();
+
+    boolean insertVente(Vente vente);
 }

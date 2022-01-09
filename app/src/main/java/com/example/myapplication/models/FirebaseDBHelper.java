@@ -46,4 +46,20 @@ public class FirebaseDBHelper implements DBHelper {
     public List<Produit> findAllProduits() {
         return null;
     }
+
+    @Override
+    public List<User> findAllUsers() {
+        return null;
+    }
+
+    @Override
+    public List<Vente> findAllVente() {
+        return null;
+    }
+
+    @Override
+    public boolean insertVente(Vente vente) {
+        return false;
+    }
+
 }

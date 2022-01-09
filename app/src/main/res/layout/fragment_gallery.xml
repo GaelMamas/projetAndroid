@@ -52,14 +52,14 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/libellePrix"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="148dp"
         android:padding="8dp"
 
-        android:text="Prix produits" />
+        android:text="Prix produit" />
 
     <EditText
         android:id="@+id/prix"
@@ -71,15 +71,15 @@
         android:text="" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/libelleStock"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:padding="8dp"
-        android:text="Qte" />
+        android:text="stock" />
 
     <EditText
-        android:id="@+id/quantite"
+        android:id="@+id/stock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -13,25 +13,40 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.myapplication.databinding.FragmentCommandBinding;
+import com.example.myapplication.databinding.FragmentVenteListBinding;
 import com.example.myapplication.models.DBHelper;
 import com.example.myapplication.models.SqlLiteDBHelper;
+import com.example.myapplication.models.Vente;
 
-public class CommandFragment extends Fragment {
+import java.util.List;
 
-    private CommandViewModel commandViewModel;
-    private FragmentCommandBinding binding;
+public class VenteListFragment extends Fragment {
+
+    private VenteListModel commandViewModel;
+    private FragmentVenteListBinding binding;
     private DBHelper database;
     private ListView listView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
-        commandViewModel = new ViewModelProvider(this).get(CommandViewModel.class);
+        commandViewModel = new ViewModelProvider(this).get(VenteListModel.class);
 
-        binding = FragmentCommandBinding.inflate(inflater, container, false);
+
+
+        binding = FragmentVenteListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         database = new SqlLiteDBHelper(getContext());
-        listView = binding.listCommande;
-        final TextView textView = binding.textCommande;
+        listView = binding.listview;
+        final TextView textView = binding.textCommand;
+
+        List<Vente> lesVentes = database.findAllVente();
+
+
+        VenteListAdapter venteListAdapter = new VenteListAdapter(getActivity().getApplicationContext(), lesVentes);
+        listView.setAdapter(venteListAdapter);
+
+
+
+
         commandViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

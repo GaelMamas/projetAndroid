@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.ui.vente.VenteFragment">
+    tools:context="com.example.myapplication.ui.commande.VenteListFragment">
 
     <TextView
-        android:id="@+id/text_vente"
+        android:id="@+id/text_command"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -16,46 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <ListView
         android:id="@+id/listview"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/prixTotal"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/commande"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_vente" >
-
-    </ListView>
-
-    <TextView
-        android:id="@+id/prixTotal"
-        android:layout_width="87dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/client"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview" />
-
-
-    <Spinner
-        android:id="@+id/client"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/calcul"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prixTotal"
-        />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/text_command" />
 
     <Button
-        android:id="@+id/calcul"
+        android:id="@+id/commande"
         android:layout_width="115dp"
         android:layout_height="43dp"
         android:layout_gravity="center_horizontal"
@@ -63,7 +34,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,13 +5,13 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 
-public class CommandViewModel extends ViewModel {
+public class VenteListModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public CommandViewModel() {
+    public VenteListModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Bonjour la famille");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

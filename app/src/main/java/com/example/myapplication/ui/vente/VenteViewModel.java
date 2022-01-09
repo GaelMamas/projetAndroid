@@ -15,7 +15,7 @@ public class VenteViewModel extends ViewModel {
     /*private LiveData<List <Produit >> produitliste = new LiveData<List<Produit>>() {
 
     }*/
-    static public List<Produit> produitliste = new ArrayList<>();
+    static public List<Produit> produitsSelectionnes = new ArrayList<>();
 
 
     public VenteViewModel() {

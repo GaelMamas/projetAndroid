@@ -48,9 +48,6 @@ public class SlideshowFragment extends Fragment {
         List<Produit> lesProduits = database.findAllProduits();
         List<Produit > produitSelectionner = new ArrayList<>();
 
-        //Produit[] lespr = lesProduits.toArray(new Produit[] {});
-
-        //String[] menu = new String[] {"lundi","Mardi","Mercredi", "Jeudi", "Vendredi","Mercredi","jeudi","vendredi","samedi","dimanche"};
 
         CustomAdapter customAdapter = new CustomAdapter(getActivity().getApplicationContext(),lesProduits);
 
@@ -75,7 +72,7 @@ public class SlideshowFragment extends Fragment {
                         Log.i("*****", lesProduits.get(i).getNom());
                         produitSelectionner.add(lesProduits.get(i));
                         //VenteAdapter.produitsSelectionnes.add(lesProduits.get(i));
-                        VenteViewModel.produitliste.add(lesProduits.get(i));
+                        VenteViewModel.produitsSelectionnes.add(lesProduits.get(i));
                     }
                 }
                CharSequence test = "";

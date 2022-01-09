@@ -41,7 +41,7 @@ public class GalleryFragment extends Fragment {
         final TextView textView = binding.textGallery;
         EditText champNom = binding.nom;
         EditText champPrix = binding.prix;
-        EditText champQuantite = binding.quantite;
+        EditText champStock = binding.stock;
         Button boutonInsert= binding.insert;
         Button boutonUpdate= binding.update;
 
@@ -57,9 +57,9 @@ public class GalleryFragment extends Fragment {
             public void onClick(View v) {
                 String nom = champNom.getText().toString();
                 double prix = Double.parseDouble(champPrix.getText().toString());
-                int quantite = Integer.parseInt(champQuantite.getText().toString());
+                int stock = Integer.parseInt(champStock.getText().toString());
 
-                Produit produit = new Produit(nom, prix, quantite);
+                Produit produit = new Produit(nom, prix, stock);
 
                 boolean checkinserdata = database.insertProduit(produit);
                 if (checkinserdata == true){
@@ -67,7 +67,7 @@ public class GalleryFragment extends Fragment {
                     Toast.makeText(getContext(), test, Toast.LENGTH_SHORT).show();
                     champNom.setText("");
                     champPrix.setText("");
-                    champQuantite.setText("");
+                    champStock.setText("");
 
                 } else {
                     CharSequence test = "Ajout ne fonctionne pas";
@@ -84,7 +84,7 @@ public class GalleryFragment extends Fragment {
             public void onClick(View v) {
                 String nom = champNom.getText().toString();
                 double prix= Double.parseDouble(champPrix.getText().toString());
-                int quantite= Integer.parseInt(champQuantite.getText().toString());
+                int quantite= Integer.parseInt(champStock.getText().toString());
 
                 Produit produit = new Produit(nom, prix, quantite);
                 boolean checkinserdata = database.updateProduit(produit);

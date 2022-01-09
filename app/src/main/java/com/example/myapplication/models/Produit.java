@@ -6,16 +6,16 @@ public class Produit {
     private String id;
     private String nom;
     private Double prix;
-    private Integer quantite;
+    private Integer stock;
 
     public Produit() {
         this.id = id = UUID.randomUUID().toString();
     }
     public Produit(String nom, Double prix, Integer quantite) {
-        this.id = id = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString();
         this.nom = nom;
         this.prix = prix;
-        this.quantite = quantite;
+        this.stock = quantite;
     }
     @Override
     public String toString() {
@@ -46,11 +46,11 @@ public class Produit {
         this.prix = prix;
     }
 
-    public Integer getQuantite() {
-        return quantite;
+    public Integer getStock() {
+        return stock;
     }
 
-    public void setQuantite(Integer quantite) {
-        this.quantite = quantite;
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 }

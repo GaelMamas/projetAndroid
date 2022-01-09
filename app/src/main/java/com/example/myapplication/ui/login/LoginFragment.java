@@ -44,27 +44,33 @@ public class LoginFragment extends Fragment {
 
             }
         });
-       EditText champNum = binding.num;
-       EditText champCode = binding.code;
-       EditText champRole= binding.role;
-       Button boutonLogin = binding.log;
+       EditText champNom = binding.nom;
+       EditText champEmail = binding.email;
+       EditText champMotDePass = binding.motDePass;
+       EditText champRole = binding.role;
+
+
+        Button boutonLogin = binding.log;
         boutonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            int num = Integer.parseInt(champNum.getText().toString().trim());
-            int code = Integer.parseInt(champCode.getText().toString().trim());
-            String role = champRole.getText().toString().trim();
+                String nom = champNom.getText().toString().trim();
+                String email = champEmail.getText().toString().trim();
+                String passWord = champMotDePass.getText().toString().trim();
+                String role = champRole.getText().toString().trim();
 
-                User   user = new User(num, code , role);
+                User  user = new User(nom, email, passWord, role);
                  boolean check = database.insertUser(user);
                 if (check == true){
-                    CharSequence test = "Ajout valable ";
+                    CharSequence test = "Utilisateur ajouté ";
                     Toast.makeText(getContext(), test, Toast.LENGTH_SHORT).show();
-                    champNum.setText("");
-                    champCode.setText("");
+                    champNom.setText("");
+                    champEmail.setText("");
+                    champMotDePass.setText("");
+                    champRole.setText("");
 
                 } else {
-                    CharSequence test = "Ajout ne fonctionne pas";
+                    CharSequence test = "Utilisateur non ajouté";
                     Toast.makeText(getContext(),test,Toast.LENGTH_SHORT).show();
                 }
 

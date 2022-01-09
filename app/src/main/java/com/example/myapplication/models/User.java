@@ -1,19 +1,30 @@
 package com.example.myapplication.models;
 
+import java.util.UUID;
+
 public class User {
     private String id;
-    private int num;
-    private int code;
+    private String nom;
+    private String email;
+    private String motDePasse;
     private String role;
+    //private String adresse;
+    //private String telephone;
 
-    public User(int num, int code , String role)  {
-
-    }
     public User() {
-        this.id = id;
-        this.num = num;
-        this.code = code;
+        this.id = UUID.randomUUID().toString();
+    }
+    public User(String nom, String email, String motDePasse, String role) {
+        this.nom = nom;
+        this.email = email;
+        this.motDePasse = motDePasse;
         this.role = role;
+        this.id = UUID.randomUUID().toString();
+    }
+
+    @Override
+    public String toString() {
+        return nom + " - "+ email;
     }
 
     public String getId() {
@@ -24,15 +35,39 @@ public class User {
         this.id = id;
     }
 
-    public int getNum() {
-        return num;
+    public String getNom(String string) {
+        return nom;
     }
 
-    public void setNum(int num) { this.num = num; }
-    public int getCode(){return code ;}
-    public void setCode(int code){ this.code = code ;}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-    public String getRole() { return role; }
+    public String getEmail() {
+        return email;
+    }
 
-    public void setRole(String role) { this.role = role; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMotDePasse() {
+        return motDePasse;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getNom() {
+        return nom;
+    }
 }
