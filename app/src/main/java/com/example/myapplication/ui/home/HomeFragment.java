@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +24,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+    private ViewFlipper slider;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,12 +36,13 @@ public class HomeFragment extends Fragment {
 
             final TextView textView = binding.textHome;
         Button button = binding.button;
+
+
+
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
-
-
             }
         });
 
@@ -53,6 +56,8 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
+
+
 
     @Override
     public void onDestroyView() {

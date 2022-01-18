@@ -11,7 +11,7 @@ public class LoginViewModel extends ViewModel {
 
     public LoginViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("LOGIN ");
+        mText.setValue(" ");
     }
 
     public LiveData<String> getText() {

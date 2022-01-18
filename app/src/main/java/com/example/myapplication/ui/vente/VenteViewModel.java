@@ -20,7 +20,7 @@ public class VenteViewModel extends ViewModel {
 
     public VenteViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Création commande");
+        mText.setValue("");
     }
 
     public LiveData<String> getText() {

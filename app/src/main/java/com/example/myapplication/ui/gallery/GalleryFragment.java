@@ -14,7 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentGalleryBinding;
 import com.example.myapplication.models.DBHelper;
 import com.example.myapplication.models.Produit;
@@ -43,7 +45,7 @@ public class GalleryFragment extends Fragment {
         EditText champPrix = binding.prix;
         EditText champStock = binding.stock;
         Button boutonInsert= binding.insert;
-        Button boutonUpdate= binding.update;
+        Button boutonUpdate= binding.liste;
 
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -79,22 +81,11 @@ public class GalleryFragment extends Fragment {
             }
         });
 
-        binding.update.setOnClickListener(new View.OnClickListener() {
+        binding.liste.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nom = champNom.getText().toString();
-                double prix= Double.parseDouble(champPrix.getText().toString());
-                int quantite= Integer.parseInt(champStock.getText().toString());
+                NavHostFragment.findNavController(GalleryFragment.this).navigate(R.id.nav_listevente);
 
-                Produit produit = new Produit(nom, prix, quantite);
-                boolean checkinserdata = database.updateProduit(produit);
-                if (checkinserdata == true){
-                    CharSequence test = "Produit Modifier";
-                    Toast.makeText(getContext(), test, Toast.LENGTH_SHORT).show();
-                } else {
-                    CharSequence test = "Modification ne marche pas";
-                    Toast.makeText(getContext(),test,Toast.LENGTH_SHORT).show();
-                }
 
             }
         });

@@ -31,16 +31,16 @@ public class VenteListAdapter extends ArrayAdapter<Vente> {
         }
 
         // champ 1
-        TextView venteId = convertView.findViewById(R.id.vente_id);
-        venteId.setText(vente.getId());
+        //TextView venteId = convertView.findViewById(R.id.vente_id);
+        //venteId.setText(vente.getId());
 
         // champ 2
-        TextView client = convertView.findViewById(R.id.client);
-        venteId.setText(vente.getClient());
+        //TextView client = convertView.findViewById(R.id.client);
+        //client.setText(vente.getClient().toString());
 
         // champ 3
         TextView content = convertView.findViewById(R.id.content);
-        venteId.setText(vente.getContent());
+        content.setText(vente.getContent());
 
         return convertView;
     }

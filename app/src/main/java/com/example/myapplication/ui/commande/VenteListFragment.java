@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -12,7 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.myapplication.R;
 import com.example.myapplication.databinding.FragmentVenteListBinding;
 import com.example.myapplication.models.DBHelper;
 import com.example.myapplication.models.SqlLiteDBHelper;
@@ -30,8 +33,6 @@ public class VenteListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         commandViewModel = new ViewModelProvider(this).get(VenteListModel.class);
 
-
-
         binding = FragmentVenteListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         database = new SqlLiteDBHelper(getContext());
@@ -44,7 +45,7 @@ public class VenteListFragment extends Fragment {
         VenteListAdapter venteListAdapter = new VenteListAdapter(getActivity().getApplicationContext(), lesVentes);
         listView.setAdapter(venteListAdapter);
 
-
+        Button ButtonCommande = binding.commande;
 
 
         commandViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -53,7 +54,12 @@ public class VenteListFragment extends Fragment {
                 textView.setText(s);
             }
 
-
+        });
+        binding.commande.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(VenteListFragment.this).navigate(R.id.nav_home );
+            }
         });
         return root;
     }

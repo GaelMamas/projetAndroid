@@ -16,8 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-
     <ListView
         android:id="@+id/listview"
         android:layout_width="0dp"
@@ -39,6 +37,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listview" />
 
+    <TextView
+        android:id="@+id/sommeTotal"
+        android:layout_width="87dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="-30dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Total :"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prixTotal" />
 
     <Spinner
         android:id="@+id/client"
@@ -52,14 +62,12 @@
         />
 
 
-
-
     <Button
         android:id="@+id/calcul"
-        android:layout_width="115dp"
-        android:layout_height="43dp"
+        android:layout_width="150dp"
+        android:layout_height="49dp"
         android:layout_gravity="center_horizontal"
-        android:text="Button"
+        android:text="Engistrer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

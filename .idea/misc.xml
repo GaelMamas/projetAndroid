@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" value="0.1203125" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2755208333333333" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.2755208333333333" />
@@ -13,11 +14,16 @@
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_command.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_dashboard.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_gallery.xml" value="0.4" />
-        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_listuser.xml" value="0.18931159420289856" />
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_listvente.xml" value="0.18931159420289856" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_login.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_slideshow.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_slideshow1.xml" value="0.2223731884057971" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_vente.xml" value="0.152" />
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/fragment_vente_list.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/listevente_item.xml" value="0.18931159420289856" />
+        <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/listuser_item.xml" value="0.18931159420289856" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/nav_header_main2.xml" value="0.264" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/productlist.xml" value="0.24547101449275363" />
         <entry key="..\:/Users/Marvin/AndroidStudioProjects/MyApplication5/app/src/main/res/layout/produit_item.xml" value="0.1875" />

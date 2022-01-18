@@ -27,10 +27,10 @@
 
     <Button
         android:id="@+id/commande"
-        android:layout_width="115dp"
-        android:layout_height="43dp"
+        android:layout_width="154dp"
+        android:layout_height="47dp"
         android:layout_gravity="center_horizontal"
-        android:text="Button"
+        android:text="Enregistrer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

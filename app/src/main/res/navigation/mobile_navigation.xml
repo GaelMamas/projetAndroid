@@ -8,34 +8,47 @@
     <fragment
         android:id="@+id/nav_vente"
         android:name="com.example.myapplication.ui.vente.VenteFragment"
-        android:label="@string/menu_vente"
+        android:label="Vente"
         tools:layout="@layout/fragment_vente" />
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.myapplication.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Accueil"
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_listeuser"
+        android:name="com.example.myapplication.ui.listeuser.ListeUserFragment"
+        android:label="Liste utilisateurs"
+        tools:layout="@layout/fragment_listuser" />
+    <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.myapplication.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="Nouveau Produit"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.myapplication.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Selection Produit"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
+        android:id="@+id/nav_listevente"
+        android:name="com.example.myapplication.ui.listevente.ListeVenteFragment"
+        android:label="Liste de Produits"
+        tools:layout="@layout/fragment_listvente" />
+    <fragment
         android:id="@+id/nav_login"
         android:name="com.example.myapplication.ui.login.LoginFragment"
-        android:label="Login"
+        android:label="Nouvel Utilisateur "
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/nav_commande"
         android:name="com.example.myapplication.ui.commande.VenteListFragment"
-        android:label="Commande"
+        android:label="Detail Vente"
         tools:layout="@layout/fragment_vente_list" />
+
+
+
 </navigation>

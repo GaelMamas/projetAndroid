@@ -11,20 +11,31 @@
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Creation produits" />
+            android:title="Nouveau produit" />
+
+        <item
+            android:id="@+id/nav_listevente"
+            android:icon="@drawable/ic_baseline_add_shopping_cart_24"
+            android:title="Liste de produit" />
+
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_vente"
-            android:icon="@drawable/ic_baseline_add_shopping_cart_24"
-            android:title="Vente" />
-        <item
-            android:id="@+id/nav_login"
-            android:title="Utilisateur" />
+            android:title="Nouvelle Vente" />
+
         <item
             android:id="@+id/nav_commande"
-            android:title="les ventes" />
+            android:icon="@drawable/ic_baseline_event_available_24"
+            android:title="Liste ventes" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_baseline_login_24"
+            android:title="Nouvel utilisateur" />
+
+        <item
+            android:id="@+id/nav_listeuser"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Liste utilisateurs" />
+
     </group>
 </menu>

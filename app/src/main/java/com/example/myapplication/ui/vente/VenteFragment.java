@@ -62,7 +62,7 @@ public class VenteFragment extends Fragment {
         client.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
            @Override
            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               vente.setClient(lesUtilisateurs.get(position).toString());
+               vente.setClient(lesUtilisateurs.get(position));
            }
 
            @Override
@@ -93,8 +93,7 @@ public class VenteFragment extends Fragment {
                 database.insertVente(vente);
                 CharSequence test = "";
                 Toast.makeText(getContext(),test, Toast.LENGTH_SHORT).show();
-                // NavHostFragmentent.findNavController(SlideshowFragment.this).navigate(nav_vente);
-                //NavHostFragment.findNavController(SlideshowFragment.this).navigate(R.id.nav_vente);
+
                 NavHostFragment.findNavController(VenteFragment.this).navigate(R.id.nav_commande);
             }
         });

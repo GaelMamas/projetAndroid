@@ -4,17 +4,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView" />
-
-    <CheckBox
-        android:id="@+id/checkprod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
 
 </LinearLayout>

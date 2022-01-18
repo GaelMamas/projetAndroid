@@ -65,7 +65,7 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         }
 
 
-        public  boolean insertUser(User user) {
+    public  boolean insertUser(User user) {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("id",user.getId());
@@ -74,15 +74,15 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         contentValues.put("motDePasse", user.getMotDePasse());
         contentValues.put("role", user.getRole());
 
-            long result = DB.insert("user",null,contentValues);
-            if (result == -1) {
-                return false;
-            }
-            else {
-                return true;
-            }
-
+        long result = DB.insert("user",null,contentValues);
+        if (result == -1) {
+            return false;
         }
+        else {
+            return true;
+        }
+
+    }
 
     public boolean updateProduit(Produit produit) {
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -125,20 +125,20 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         }
     }
 
-        public boolean deleteProduit(String id) {
-            SQLiteDatabase DB = this.getWritableDatabase();
-            Cursor cursor = DB.rawQuery("select * from produit where id=?", new String[]{id});
-            if (cursor.getCount() > 0) {
-                long resultat = DB.delete("produit", "id=?", new String[]{id});
-                if (resultat == -1) {
-                    return false;
-                } else {
-                    return true;
-                }
-            } else {
+    public boolean deleteProduit(String id) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("select * from produit where id=?", new String[]{id});
+        if (cursor.getCount() > 0) {
+            long resultat = DB.delete("produit", "id=?", new String[]{id});
+            if (resultat == -1) {
                 return false;
+            } else {
+                return true;
             }
+        } else {
+            return false;
         }
+    }
 
     public boolean deleteUser(String id) {
         SQLiteDatabase DB = this.getWritableDatabase();
@@ -156,35 +156,33 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
     }
 
 
-        public Produit getProduit(String id) {
-            SQLiteDatabase DB = this.getWritableDatabase();
-            Cursor cursor = DB.rawQuery("select * from produit where name=?", null);
-            //return (android.database.Cursor) Cursor;
-            Produit produit = new Produit();
-            //
-
-            return produit;
+    public Produit getProduit(String id) {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("select * from produit where id=?", new String[]{id});
+        //return (android.database.Cursor) Cursor;
+        Produit produit = null;
+        if (cursor.moveToNext()) {
+            produit = getProduit(cursor);
         }
+        return produit;
+    }
 
-        public List<Produit> findAllProduits() {
-            SQLiteDatabase DB = this.getWritableDatabase();
-            Cursor cursor = DB.rawQuery("select * from produit", null);
-            //return (android.database.Cursor) Cursor;
+    public List<Produit> findAllProduits() {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursor = DB.rawQuery("select * from produit", null);
+        //return (android.database.Cursor) Cursor;
 
-            List<Produit> lesProduits =  new ArrayList<>();
+        List<Produit> lesProduits =  new ArrayList<>();
 
-            while (cursor.moveToNext()) {
-                Produit produit = new Produit();
-                produit.setId(cursor.getString(0));
-                produit.setNom(cursor.getString(1));
-                produit.setPrix(cursor.getDouble(2));
-                produit.setStock(cursor.getInt(3));
-                lesProduits.add(produit);
-            }
-            //
-
-         return lesProduits;
+        while (cursor.moveToNext()) {
+            Produit produit = getProduit(cursor);
+            lesProduits.add(produit);
         }
+        //
+
+        return lesProduits;
+    }
+
     public List<User> findAllUsers() {
         SQLiteDatabase DB = this.getWritableDatabase();
         Cursor cursor = DB.rawQuery("select * from user", null);
@@ -193,13 +191,7 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         List<User> lesusers =  new ArrayList<>();
 
         while (cursor.moveToNext()) {
-            User user = new User();
-            user.setId(cursor.getString(0));
-            user.setNom(cursor.getString(1));
-            user.setEmail(cursor.getString(2));
-            user.setMotDePasse(cursor.getString(3));
-            user.setRole(cursor.getString(4));
-
+            User user = getUser(cursor);
             lesusers.add(user);
         }
         return lesusers;
@@ -210,7 +202,7 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("id", vente.getId());
-        contentValues.put("client_id",vente.getClient());
+        contentValues.put("client_id",vente.getClient().getId());
 
         long result = DB.insert("vente",null,contentValues);
         if (result == -1) {
@@ -240,37 +232,75 @@ public class SqlLiteDBHelper extends SQLiteOpenHelper  implements DBHelper {
         List<Vente> lesventes =  new ArrayList<>();
 
         while (cursor.moveToNext()) {
-            Vente vente = new Vente();
-            vente.setId(cursor.getString(0));
-            vente.setClient(cursor.getString(1));
-
+            Vente vente = getVente(cursor);
             lesventes.add(vente);
-
-            Cursor cursorVenteItem = DB.rawQuery("select * from vente_item where vente_id=?", new String[] {vente.getId()});
-            while (cursorVenteItem.moveToNext()) {
-                VenteItem venteItem = new VenteItem();
-                venteItem.setId(cursorVenteItem.getString(0));
-                venteItem.setVente(vente);
-                String produitId = cursorVenteItem.getString(2);
-                venteItem.setQuantite(cursorVenteItem.getInt(3));
-
-                vente.getVenteItems().add(venteItem);
-
-                Cursor cursorProduit = DB.rawQuery("select * from produit where id=?", new String[] {produitId});
-                while (cursorProduit.moveToNext()) {
-                    Produit produit = new Produit();
-                    produit.setId(cursorProduit.getString(0));
-                    produit.setNom(cursorProduit.getString(1));
-                    produit.setPrix(cursorProduit.getDouble(2));
-                    produit.setStock(cursorProduit.getInt(3));
-
-                    venteItem.setProduit(produit);
-                }
-            }
         }
         return lesventes;
     }
 
 
+    Produit getProduit (Cursor cursorProduit) {
+        Produit produit = new Produit();
+        produit.setId(cursorProduit.getString(0));
+        produit.setNom(cursorProduit.getString(1));
+        produit.setPrix(cursorProduit.getDouble(2));
+        produit.setStock(cursorProduit.getInt(3));
 
+        return produit;
+    }
+
+    VenteItem getVenteItem(Cursor cursorVenteItem, Vente vente) {
+        VenteItem venteItem = new VenteItem();
+        venteItem.setId(cursorVenteItem.getString(0));
+
+        String produitId = cursorVenteItem.getString(2);
+        venteItem.setQuantite(cursorVenteItem.getInt(3));
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor cursorProduit = DB.rawQuery("select * from produit where id=?", new String[] {produitId});
+        while (cursorProduit.moveToNext()) {
+            Produit produit = getProduit (cursorProduit);
+            venteItem.setProduit(produit);
+        }
+
+        venteItem.setVente(vente);
+
+        return venteItem;
+    }
+
+    User getUser (Cursor cursorUser) {
+
+        User user = new User();
+        user.setId(cursorUser.getString(0));
+        user.setNom(cursorUser.getString(1));
+        user.setEmail(cursorUser.getString(2));
+        //user.setMotDePasse(cursorUser.getString(3));
+        user.setRole(cursorUser.getString(4));
+
+        return user;
+    }
+
+    Vente getVente (Cursor cursorVente) {
+        Vente vente = new Vente();
+        vente.setId(cursorVente.getString(0));
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+
+        String clientId = cursorVente.getString(1);
+
+        Cursor cursorClient =  DB.rawQuery("select * from user where id=?", new String[] {clientId});
+        while (cursorClient.moveToNext()) {
+            User client = getUser (cursorClient);
+            vente.setClient(client);
+        }
+
+        Cursor cursorVenteItem = DB.rawQuery("select * from vente_item where vente_id=?", new String[] {vente.getId()});
+        while (cursorVenteItem.moveToNext()) {
+            VenteItem venteItem = getVenteItem(cursorVenteItem, vente);
+
+            vente.getVenteItems().add(venteItem);
+        }
+
+        return vente;
+    }
 }
